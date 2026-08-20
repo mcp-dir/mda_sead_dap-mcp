@@ -1,0 +1,17 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.mcp-dir/mda_sead_dap-mcp",
+  "title": "MDA SEAD: Declaração de Aptidão ao PRONAF (DAP)",
+  "description": "MDA SEAD: Declaração de Aptidão ao PRONAF (DAP), official-source lookup. Platform-hosted, pay per qu",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/mcp-dir/mda_sead_dap-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.mcp.ai/p_mda_sead_dap"
+    }
+  ]
+}

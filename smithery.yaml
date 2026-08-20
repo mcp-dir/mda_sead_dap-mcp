@@ -1,0 +1,33 @@
+# Smithery configuration for MDA SEAD: Declaração de Aptidão ao PRONAF (DAP)
+# Schema: https://smithery.ai/docs/build/project-config
+# Remote HTTP MCP — server hosted at https://api.mcp.ai/p_mda_sead_dap
+
+name: mda_sead_dap-mcp
+displayName: "MDA SEAD: Declaração de Aptidão ao PRONAF (DAP)"
+description: >
+  MDA SEAD: Declaração de Aptidão ao PRONAF (DAP), consulta em fonte oficial. Hospedado pela plataforma, sem credenciais da plataforma, pague por consulta com crédito pré-pago.
+
+version: 0.1.0
+license: MIT
+homepage: https://github.com/mcp-dir/mda_sead_dap-mcp
+repository: https://github.com/mcp-dir/mda_sead_dap-mcp
+
+tags:
+  - mda_sead_dap
+  - brazil
+  - horizontal
+  - read-only
+
+# Remote HTTP MCP — sem startCommand local (servidor já hospedado)
+startCommand:
+  type: http
+  url: https://api.mcp.ai/p_mda_sead_dap
+
+auth:
+  type: oauth2
+  resourceMetadataUrl: https://api.mcp.ai/p_mda_sead_dap/.well-known/oauth-protected-resource
+  fallback:
+    type: agent-auth
+    description: >
+      Para clientes sem OAuth 2.1. O agente expõe uma tool authenticate(token).
+      Usuário gera o JWT em https://app.mcp.ai/agent-auth e cola no chat.
